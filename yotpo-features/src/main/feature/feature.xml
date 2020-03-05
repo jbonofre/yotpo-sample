@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features name="yotpo-feature-${project.version}" xmlns="http://karaf.apache.org/xmlns/features/v1.4.0" xmlns:xsi="http://karaf.apache.org/xmlns/features/v1.4.0 http://karaf.apache.org/xmlns/features/v1.4.0">
+
+    <repository>mvn:org.apache.cxf.karaf/apache-cxf/3.3.5/xml/features</repository>
+
+    <feature name="yotpo-api" version="${project.version}">
+        <bundle>mvn:com.yotpo.sample/yotpo-api/${project.version}</bundle>
+    </feature>
+
+    <feature name="yotpo-impl" version="${project.version}">
+        <feature version="[1,2)">yotpo-api</feature>
+        <feature dependency="true">scr</feature>
+        <bundle>mvn:com.yotpo.sample/yotpo-one-impl/${project.version}</bundle>
+    </feature>
+
+    <feature name="yotpo-rest" version="${project.version}">
+        <feature version="[1,2)">yotpo-api</feature>
+        <feature>http</feature>
+        <requirement>osgi.service;effective:=active;filter:=(objectClass=org.osgi.service.http.HttpService)</requirement>
+        <feature dependency="true">scr</feature>
+        <feature version="3.3.5">cxf</feature>
+        <bundle dependency="true">mvn:com.fasterxml.jackson.core/jackson-core/2.10.2</bundle>
+        <bundle dependency="true">mvn:com.fasterxml.jackson.core/jackson-annotations/2.10.2</bundle>
+        <bundle dependency="true">mvn:com.fasterxml.jackson.core/jackson-databind/2.10.2</bundle>
+        <bundle dependency="true">mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-base/2.10.2</bundle>
+        <bundle dependency="true">mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider/2.10.2</bundle>
+    </feature>
+
+</features>
