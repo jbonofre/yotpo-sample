@@ -11,6 +11,7 @@
     </parent>
 
     <artifactId>yotpo-features</artifactId>
+    <name>Yotpo :: Sample :: Features</name>
     <packaging>pom</packaging>
 
     <build>
