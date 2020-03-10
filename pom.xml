@@ -12,7 +12,7 @@
     <modules>
         <module>yotpo-rules</module>
         <module>yotpo-features</module>
-        <!-- <module>yotpo-dist</module> -->
+        <module>yotpo-dist</module>
         <!-- <mpdule>yotpo-itest</module> -->
     </modules>
 
