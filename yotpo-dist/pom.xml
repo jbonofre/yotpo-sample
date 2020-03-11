@@ -71,6 +71,15 @@
             <type>xml</type>
             <scope>runtime</scope>
         </dependency>
+
+        <!-- yotpo -->
+        <dependency>
+            <groupId>com.yotpo.sample</groupId>
+            <artifactId>yotpo-features</artifactId>
+            <version>${project.version}</version>
+            <type>xml</type>
+            <scope>runtime</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -222,6 +231,7 @@
                         <feature>unomi-kar</feature>
                         <feature>unomi-router-karaf-feature</feature>
                         <feature>unomi-web-tracker-karaf-kar</feature>
+                        <feature>yotpo-rules</feature>
                     </bootFeatures>
                     <javase>1.8</javase>
                 </configuration>
